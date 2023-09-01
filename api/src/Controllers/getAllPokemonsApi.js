@@ -15,20 +15,19 @@ const getAllPokemonsApi = async (req, res) => {
                 image: pokemon.data.sprites.front_default,
                 hp: pokemon.data.stats[0].base_stat,
                 attack: pokemon.data.stats[1].base_stat,
-                defence: pokemon.data.stats[2].base_stat,
+                defense: pokemon.data.stats[2].base_stat,
                 speed: pokemon.data.stats[3].base_stat,
                 height: pokemon.data.height,
-                weight: pokemon.data.weight
+                weight: pokemon.data.weight,
+                type: pokemon.data.types.map((type) => type.type.name)
             }
         })
         const finished = await Promise.all(apiData)
 
-        console.log(finished)
+        return finished
 
-        return res.status(200).json(finished)
-
-    } catch (error) {
-        res.status(500).send(error.message);
+    } catch {
+        return false
     }
 };
 
