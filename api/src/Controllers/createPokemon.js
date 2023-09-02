@@ -30,7 +30,7 @@ const createPokemon = async (
     })
 
     if(typeName && typeName.length > 0) {
-        const types = await Type.findAll({
+        const type = await Type.findAll({
             where: {
                 name: typeName
             }

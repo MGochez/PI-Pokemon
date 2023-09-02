@@ -3,7 +3,7 @@ const URL_API = `https://pokeapi.co/api/v2/pokemon/`
 
 const getPokemonApiById = async (idPokemon) => {
     try {
-         
+        console.log('LOG DE ID API');
         const pokemonID = await axios.get(`${URL_API}${idPokemon}`)
 
         return pokemonID.data

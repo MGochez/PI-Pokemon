@@ -1,7 +1,7 @@
 const axios = require('axios');
 const URL_API ='https://pokeapi.co/api/v2/pokemon?limit=151'
 
-const getAllPokemonsApi = async (req, res) => {
+const getAllPokemonsApi = async () => {
     try {
         const apiUrl = await axios.get(URL_API);
 
@@ -9,7 +9,7 @@ const getAllPokemonsApi = async (req, res) => {
 
             const pokemon = await axios.get(info.url)
 
-            return {       //pusheo el pokemon con sus datos
+            return {                                             //pusheo el pokemon con sus datos
                 id: pokemon.data.id,
                 name: pokemon.data.name,
                 image: pokemon.data.sprites.front_default,

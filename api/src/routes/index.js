@@ -1,9 +1,11 @@
 const { Router } = require('express');
-const { getAllPokemons } = require('../Controllers/getAllPokemons')
-const { getPokemonById } = require('../Controllers/getPokemonById.JS');
-const { getPokemonApiByName } = require('../Controllers/getPokemonApiByName')
+const { getAllPokemons } = require('../Controllers/getAllPokemons/getAllPokemons')
+const { getPokemonById } = require('../Controllers/getPokemonById/getPokemonById.js');
+const { getPokemonByName } = require('../Controllers/getPokemonByName/getPokemonByName');
 const { getPokemonByType } = require('../Controllers/getPokemonByType')
 const { postPokemon } = require('../Controllers/postPokemon');
+
+
 
 // Importar todos los routers;
 // Ejemplo: const authRouter = require('./auth.js');
@@ -14,10 +16,9 @@ const router = Router();
 // Configurar los routers
 // Ejemplo: router.use('/auth', authRouter);
 
-router.get('/pokemons', getAllPokemons)
-router.get('/pokemons/:idPokemon', getPokemonById )
-router.get('/pokemons/name?=', getPokemonApiByName)
-router.post('/pokemons', postPokemon)
-router.get('/types', getPokemonByType)
-
+router.get('/pokemons', getAllPokemons)                     // <- TODOS
+router.get('/pokemons/:idPokemon', getPokemonById)          // <- ID
+router.get('/pokemons/name?=', getPokemonByName)            // <- NAME
+router.post('/pokemons', postPokemon)                       // <- CREATE
+router.get('/types', getPokemonByType)                      // <- TYPE
 module.exports = router;
