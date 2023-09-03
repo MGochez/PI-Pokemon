@@ -41,10 +41,6 @@ module.exports = (sequelize) => {
     weight:{
       type: DataTypes.INTEGER,
       allowNull: false
-    },
-    type: {
-      type: DataTypes.TEXT,
-      allowNull: false
     }
   },
   {

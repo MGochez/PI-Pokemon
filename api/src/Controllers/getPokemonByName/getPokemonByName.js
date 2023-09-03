@@ -1,18 +1,14 @@
 const { getPokemonApiByName } = require("./getPokemonApiByName");
 const { getPokemonDbByName } = require("./getPokemonDbByName");
 
-
-
 const getPokemonByName = async (req, res) => {
     try {
-        const { pokemonName } = req.params;
+        const { name } = req.query;
 
-        const pokemonNameLowerCase = pokemonName.toLowerCase();
+        const apiPokemonName = await getPokemonApiByName(name);
+        const dbPokemonName = await getPokemonDbByName(name);
 
-        const apiPokemonName = await getPokemonApiByName(pokemonNameLowerCase);
-        const dbPokemonName = await getPokemonDbByName(pokemonNameLowerCase);
-
-        if(dbName) {
+        if(dbPokemonName) {
             return res.status(201).json(dbPokemonName)
         }
 
