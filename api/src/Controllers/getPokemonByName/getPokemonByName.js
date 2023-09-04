@@ -6,9 +6,10 @@ const getPokemonByName = async (req, res) => {
         const { name } = req.query;
 
         const apiPokemonName = await getPokemonApiByName(name);
+        
         const dbPokemonName = await getPokemonDbByName(name);
 
-        if(dbPokemonName) {
+        if( dbPokemonName ) {
             return res.status(201).json(dbPokemonName)
         }
 

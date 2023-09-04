@@ -1,14 +1,16 @@
-const { Pokemon, Type } = require('../../db');
+const { Op } = require('sequelize')
 const { getAllPokemonsDB } = require('../getAllPokemons/getAllPokemonsDB');
 
-
-const getPokemonDbByName = async (pokemonName) => {
+const getPokemonDbByName = async (name) => {
     try {
-        const dbPokemons = await getAllPokemonsDB();
 
-        const dbPokemonName = dbPokemons.find((pokemon) => pokemon.name === pokemonName)
-
-        return dbPokemonName.data
+        const dbPokemonName = await getAllPokemonsDB({
+            where: {
+              name: { [Op.iLike]: `%${name}%` },
+            },
+          })
+        
+        return dbPokemonName.dataValues
 
     } catch (error) {
         return false
