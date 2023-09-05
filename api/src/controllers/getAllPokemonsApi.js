@@ -4,11 +4,8 @@ const URL_API ='https://pokeapi.co/api/v2/pokemon?limit=151'
 const getAllPokemonsApi = async () => {
     try {
         const apiUrl = await axios.get(URL_API);
-
         const apiData = apiUrl.data.results.map( async info => { // mapeo 
-
             const pokemon = await axios.get(info.url)
-
             return {                                             //pusheo el pokemon con sus datos
                 id: pokemon.data.id,
                 name: pokemon.data.name,
@@ -26,11 +23,11 @@ const getAllPokemonsApi = async () => {
 
         return finished
 
-    } catch {
-        return false
+    } catch (error) {
+        throw new Error('No se pudo obtener los Pokémon desde la API')
     }
 };
 
 module.exports = {
     getAllPokemonsApi
-}
+};
