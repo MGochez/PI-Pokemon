@@ -10,6 +10,8 @@ const pokemonCreateHandler = async (req, res) => {
             hp,
             attack,
             defense,
+            spattack,
+            spdefense,
             speed,
             height,
             weight,
@@ -33,7 +35,7 @@ const pokemonCreateHandler = async (req, res) => {
             throw new Error('Éste Pokémon ya existe');
         }
 
-        if (!name || !image || !hp || !attack || !defense || !speed || !height || !weight || !type) {
+        if (!name || !image || !hp || !attack || !defense || !spattack || !spdefense || !speed || !height || !weight || !type) {
             throw new Error('Faltan datos del Pokémon')
         }
 
@@ -46,6 +48,8 @@ const pokemonCreateHandler = async (req, res) => {
                 hp,
                 attack,
                 defense,
+                spattack,
+                spdefense,
                 speed,
                 height,
                 weight,

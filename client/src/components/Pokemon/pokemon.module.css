@@ -1,0 +1,32 @@
+.card {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 16px;
+    margin: 16px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.2s ease-in-out;
+  }
+  
+  .card:hover {
+    box-shadow: 0 8px 12px rgba(29, 91, 143, 0.9);
+    transform: scale(1.05);
+  }
+  
+  .card h1 {
+    font-size: 24px;
+    margin-bottom: 8px;
+  }
+  
+  .card img {
+    width: 150px;
+    height: 150px;
+    cursor: pointer;
+    margin: 16px auto;
+    display: block;
+  }
+  
+  .card h2 {
+    font-size: 18px;
+    margin: 8px;
+  }

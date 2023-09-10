@@ -13,7 +13,9 @@ const getAllPokemonsApi = async () => {
                 hp: pokemon.data.stats[0].base_stat,
                 attack: pokemon.data.stats[1].base_stat,
                 defense: pokemon.data.stats[2].base_stat,
-                speed: pokemon.data.stats[3].base_stat,
+                spattack:pokemon.data.stats[3].base_stat,
+                spdefense:pokemon.data.stats[4].base_stat,
+                speed: pokemon.data.stats[5].base_stat,
                 height: pokemon.data.height,
                 weight: pokemon.data.weight,
                 type: pokemon.data.types.map((type) => type.type.name)

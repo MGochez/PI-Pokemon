@@ -3,10 +3,10 @@ const { getAllPokemonsDB } = require('./getAllPokemonsDB')
 const getPokemonIdDB = async (ID) => {
     try {
         const dbPokemons = await getAllPokemonsDB();
-        const dbPokemonID = dbPokemons.find((pokemon) => pokemon.ID === ID);
+        const dbPokemonID = dbPokemons.find((pokemon) => pokemon.id == ID);
         return dbPokemonID
     } catch (error) {
-        throw new Error('Error al buscar el Pokémon por ID en la DB')
+        throw new Error('Error al buscar los Pokémon en la DB')
     }
 }
 

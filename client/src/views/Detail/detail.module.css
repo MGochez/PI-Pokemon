@@ -1,0 +1,62 @@
+/* Estilos para la tarjeta (card) */
+.card {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #ccc;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: rgba(65, 60, 60, 0.288);
+  }
+  
+  /* Estilos para la imagen grande */
+  .largeImage {
+    width: 100%; /* Aumenta el tamaño de la imagen al 200% si el ID es un número */
+  }
+  
+  /* Estilos para las filas (row) de contenido */
+  .row {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+  }
+
+ /* Estilos para centrar los elementos h2 horizontalmente y agregar espacio horizontal */
+.centered {
+    text-align: center; /* Centra horizontalmente el texto */
+    margin-left: 20px; /* Agrega espacio horizontal izquierdo */
+    margin-right: 20px; /* Agrega espacio horizontal derecho */
+  }
+  
+  /* Estilos para las filas con espaciado vertical y ajuste de contenido */
+  .spaced {
+    margin-bottom: 10px; /* Espaciado vertical entre las filas */
+    overflow-wrap: break-word; /* Permite que el texto largo se ajuste automáticamente */
+  }
+
+  .hp {
+    color: #65bd5c
+  }
+
+  .attack {
+    color: #f6de52
+  }
+
+  .defense {
+    color: #ec8023
+  }
+
+  .spattack {
+    color: #61addf
+  }
+
+  .spdefense {
+    
+    color: #8e68ad
+  }
+
+  .speed{
+    color: #d572ad
+  }
+

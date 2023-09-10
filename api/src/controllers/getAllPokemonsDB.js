@@ -5,19 +5,18 @@ const getAllPokemonsDB = async (db) => {
         ...db,
         include: Type
     });
-    
 
-   /*  dbPokemons.map( (pokemon) => {
-
-        console.log(pokemon.types.dataValues[0].name)
-        const typesArr = pokemon.Type.map((type) => type.name)
+    // Mapeo los nombres de los tipos de cada Pokémon
+    const pokemonsWithTypes = dbPokemons.map((pokemon) => {
+        const typeNames = pokemon.types.map((type) => type.name);
         return {
-        ...pokemon.dataValues,
-        types: typesArr
-    }})*/
-    
-    return dbPokemons;
-};
+            ...pokemon.toJSON(), // Convierte el objeto Pokemon a JSON
+            types: typeNames
+        };
+    });
+
+    return pokemonsWithTypes;
+}
 
 module.exports = {
     getAllPokemonsDB

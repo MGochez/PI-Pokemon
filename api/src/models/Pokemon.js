@@ -31,6 +31,14 @@ module.exports = (sequelize) => {
       type: DataTypes.INTEGER,
       allowNull: false
     },
+    spattack:{
+      type: DataTypes.INTEGER,
+      allowNull: false
+    },
+    spdefense:{
+      type: DataTypes.INTEGER,
+      allowNull: false
+    },
     speed:{
       type: DataTypes.INTEGER,
       allowNull: false
