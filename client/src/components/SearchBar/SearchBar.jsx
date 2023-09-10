@@ -1,20 +1,42 @@
-import { Link } from "react-router-dom"
-
-
+import styles from './searchBar.module.css'
+import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { searchByName, setCurrentPage } from "../../redux/actions";
+import { FaSearch } from 'react-icons/fa'
 
 
 const SearchBar = () => {
-    
+    let dispatch = useDispatch();
+
+    let [searchName, setSearchName] = useState("")
+  
+    let handleChange = function (event) {
+      setSearchName(event.target.value);
+    }
+  
+    let handleSearchBar = function (name) {
+      dispatch(searchByName(name));
+      dispatch(setCurrentPage(1))
+    }
 
     return (
-        <div>
-            <input
+        <div className={styles.searchcontainer}>
+            <div>
+              <input
                 type="search"
-                placeholder="Buscar Pokemon"
-            />
-            <Link to='/create'>
-                <button >¡Crea tu pokemon!</button>
-            </Link>
+                className={styles.input}
+                value={searchName}
+                onChange={handleChange}
+                placeholder="Pokename..."
+              />
+              <div className={`${styles.iconContainer} sm:items-center sm:justify-center`}>
+                {searchName && (
+                  <FaSearch className={styles.icon} onClick={() => handleSearchBar(searchName.toLocaleLowerCase())}>
+                    Search
+                  </FaSearch>
+                )}
+              </div>
+            </div>
         </div>
     )
 }

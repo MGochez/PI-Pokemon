@@ -3,10 +3,13 @@ import styles from './pokemon.module.css'
 
 const Pokemon = ({pokemon}) => {
 
-    console.log(pokemon)
-    const {id, name, image, types } = pokemon
+    
+    const { id, name, image, types, type } = pokemon
 
-    console.log(types)
+    let showingType = type
+    if (types) {
+        showingType = types
+    } 
 
     let navigate = useNavigate()
     let navigateHandler = function() {
@@ -22,12 +25,10 @@ const Pokemon = ({pokemon}) => {
             <div>
                 <h1>{capitalizeFirstLetter(name)}</h1>
             </div>
-            <img src={image} onClick={navigateHandler} alt={name}/>
-            {/* <div>
-                {types?.map((type, index) => {
-                    return <h2 key={index}>{type.name}</h2>
-                })}
-            </div> */}
+            <img src={image} onClick={navigateHandler} alt={`Imagen de ${name}`}/>
+            <div className={styles.types}>
+                <h2>{showingType[0]} {showingType[1] && showingType[1]}</h2>
+            </div>
         </div>
     )
 }

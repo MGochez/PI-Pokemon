@@ -15,14 +15,13 @@ const Home = () => {
   }, []);
 
 
-
-
-
-
   return (
-    <div className={styles.container}>
-      <div>Home </div>
-      <Pokemons allPokemons={allPokemons}/>
+    <div>
+      <div className={styles.container}>
+        {/* <Paginated/> */}
+        <Pokemons allPokemons={allPokemons}/>
+        {/* <Paginated/> */}
+      </div>
     </div>
   )
 }

@@ -1,0 +1,36 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 50px; /* Aumenta la altura a 70px */
+    background-color: #333;
+    padding: 0 20px;
+    position: fixed; /* Fija la navbar en la parte superior de la pantalla */
+    top: 0; /* Coloca la navbar en la parte superior */
+    left: 0; /* Coloca la navbar en el borde izquierdo */
+    right: 0; /* Extiende la navbar hasta el borde derecho */
+    z-index: 999; /* Asegura que la navbar esté encima de otros elementos */
+  }
+  
+  .navbar button {
+    padding: 10px 20px; /* Aumenta el padding para hacer los botones más grandes */
+    font-size: 16px; /* Aumenta el tamaño del texto */
+    color: #fff;
+    background-color: #555;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .searchBar {
+    flex-grow: 1;
+    margin: 0 1px;
+  }
+  
+  .tryButton {
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #555;
+    border: none;
+    cursor: pointer;
+  }

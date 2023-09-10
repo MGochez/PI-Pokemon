@@ -74,46 +74,6 @@ export const searchById = (id) => {
     };
 };
 
-
-
-
-
-
-
-export function chooseOrder(selection) {
-    return {
-        type: CHOOSE_ORDER,
-        payload: selection
-    }
-}
-
-export function chooseFilters(selection) {
-    return{
-        type: CHOOSE_FILTERS,
-        payload: selection
-    }
-}
-
-export function cleanDetail() {
-    return {
-        type: CLEAN_DETAIL
-    }
-}
-
-export function setLoading(bool) {
-    return {
-        type: SET_LOADING,
-        payload: bool
-    }
-}
-
-export function setCurrentPage(pageNumber) {
-    return {
-        type: SET_CURRENT_PAGE,
-        payload: pageNumber
-    }
-}
-
 export function createPokemon(pokemon) {
     return async (dispatch) => {
         try {
@@ -147,6 +107,40 @@ export function createPokemon(pokemon) {
         } catch (error) {
             alert(error.response.data)
         }
+    }
+}
+
+export function chooseOrder(selection) {
+    return {
+        type: CHOOSE_ORDER,
+        payload: selection
+    }
+}
+
+export function chooseFilters(selection) {
+    return{
+        type: CHOOSE_FILTERS,
+        payload: selection
+    }
+}
+
+export function cleanDetail() {
+    return {
+        type: CLEAN_DETAIL
+    }
+}
+
+export function setLoading(bool) {
+    return {
+        type: SET_LOADING,
+        payload: bool
+    }
+}
+
+export function setCurrentPage(pageNumber) {
+    return {
+        type: SET_CURRENT_PAGE,
+        payload: pageNumber
     }
 }
 

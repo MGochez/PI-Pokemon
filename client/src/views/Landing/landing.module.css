@@ -1,0 +1,15 @@
+/* Establece una imagen de fondo que cubra toda la pantalla */
+body {
+    background-image: url('../../assets/rayquaza_wallpaper.gif');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    margin: 0 auto;
+}
+
+/* Agrega la propiedad background-position solo cuando el ancho de la pantalla sea menor o igual a 768px (puedes ajustar este valor según tus necesidades) */
+@media (max-width: 768px) {
+    body {
+        background-position: center;
+    }
+}
