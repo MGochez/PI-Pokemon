@@ -25,13 +25,13 @@ const Form = () => {
     
     <form className={styles.form}>
       <div className={styles.formSection}>
-        <p>* Required fields</p>
-        <label>Name*</label>
+        <p>* REQUERIDO</p>
+        <label>Nombre*</label>
         <input value={pokemonCreated.name} name="name" onChange={handleInput} />
         <p>{errorsPokemon?.name}</p>
       </div>
       <div>
-        <label>Image URL*</label>
+        <label>Imagen (URL)*</label>
         <input value={pokemonCreated.image} type='text' name="image" onChange={handleInput} placeholder="default image if empty"/>
         <p>{errorsPokemon?.image}</p>
       </div>
