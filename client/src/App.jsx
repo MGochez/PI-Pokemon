@@ -5,12 +5,22 @@ import Home from './views/Home/Home'
 import Detail from './views/Detail/Detail'
 import Form from './views/Form/Form'
 import NavBar from './components/NavBar/NavBar'
-import styles from './app.css'
+import { useDispatch } from 'react-redux'
+import { useEffect } from 'react'
+import { getAllPokemons, getAllTypes } from './redux/actions'
+
 
 
 function App() {
   const location = useLocation()
 
+  let dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getAllPokemons());
+    dispatch(getAllTypes());
+  },[])
+  
   return (
     <div>
       {location.pathname === '/' ? null : <NavBar />}

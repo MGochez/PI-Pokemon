@@ -5,7 +5,7 @@ import { ALL_POKEMON, CHOOSE_FILTERS, CHOOSE_ORDER, CLEAN_DETAIL, CREATE_POKEMON
 export const getAllTypes = () => {
     return async (dispatch) => {
         try {
-            let response = await axios.get('http://localhost:3001/types')
+            let response = await axios.get('http://localhost:3001/types/')
             let data = response.data
             return dispatch ({
                 type: GET_TYPES,
@@ -35,6 +35,8 @@ export const getAllPokemons = () => {
     };
 };
 
+
+
 export const refillPokemons = () => {
     return {
         type: REFILL_POKEMONS
@@ -59,6 +61,10 @@ export const searchByName = (name) => {
 export const searchById = (id) => {
     return async (dispatch) => {
         try {
+            if (id === 'reset' ) {return dispatch({
+                type: SEARCH_BY_ID,
+                payload: []
+            })}
             dispatch(setLoading(true))
             let response = await axios.get(`http://localhost:3001/pokemons/${id}`);
             let data = response.data;
@@ -77,19 +83,12 @@ export const searchById = (id) => {
 export function createPokemon(pokemon) {
     return async (dispatch) => {
         try {
-            let response = await axios.get('http://localhost:3001/pokemons', pokemon)
+            let response = await axios.post('http://localhost:3001/pokemons', pokemon)
             let data = response.data;
             await dispatch({
                 type: CREATE_POKEMON,
                 payload: data
             });
-            await dispatch(chooseFilters({
-                origin: 'Selecciona un origen',
-                typeOne: 'Selecciona el primer filtro',
-                typeTwo: 'Selecciona el segundo filtro'
-            }))
-            await dispatch(chooseOrder('Select Order'))
-
             await dispatch(setPokemonGlobal({
                 name: '',
                 image: '',
@@ -105,6 +104,7 @@ export function createPokemon(pokemon) {
             await dispatch(setTypesGlobal([]));
             return dispatch(setCurrentPage());
         } catch (error) {
+            console.log(error)
             alert(error.response.data)
         }
     }

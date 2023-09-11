@@ -18,7 +18,7 @@ const getAllPokemonsApi = async () => {
                 speed: pokemon.data.stats[5].base_stat,
                 height: pokemon.data.height,
                 weight: pokemon.data.weight,
-                type: pokemon.data.types.map((type) => type.type.name)
+                types: pokemon.data.types.map((type) => type.type.name)
             }
         })
         const finished = await Promise.all(apiData)

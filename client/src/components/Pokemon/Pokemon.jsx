@@ -1,15 +1,15 @@
+/* eslint-disable react/prop-types */
 import { useNavigate } from "react-router-dom";
 import styles from './pokemon.module.css'
 
 const Pokemon = ({pokemon}) => {
 
-    
-    const { id, name, image, types, type } = pokemon
+    const { id, name, image, types, /* type */ } = pokemon
 
-    let showingType = type
+/*     let showingType = type
     if (types) {
         showingType = types
-    } 
+    }  */
 
     let navigate = useNavigate()
     let navigateHandler = function() {
@@ -18,7 +18,10 @@ const Pokemon = ({pokemon}) => {
 
     const capitalizeFirstLetter = (str) => {
         return str.charAt(0).toUpperCase() + str.slice(1);
-      };
+    };
+
+    const type0 = types[0]
+    const type1 = types[1]
 
     return (
         <div className={styles.card}>
@@ -27,7 +30,7 @@ const Pokemon = ({pokemon}) => {
             </div>
             <img src={image} onClick={navigateHandler} alt={`Imagen de ${name}`}/>
             <div className={styles.types}>
-                <h2>{showingType[0]} {showingType[1] && showingType[1]}</h2>
+                <h2 className={styles[type0]}>{type0}</h2> <h2 className={styles[type1]}>{type1 && type1}</h2>
             </div>
         </div>
     )

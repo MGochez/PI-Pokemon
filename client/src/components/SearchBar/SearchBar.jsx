@@ -27,7 +27,7 @@ const SearchBar = () => {
                 className={styles.input}
                 value={searchName}
                 onChange={handleChange}
-                placeholder="Pokename..."
+                placeholder="Buscar Pokémon..."
               />
               <div className={`${styles.iconContainer} sm:items-center sm:justify-center`}>
                 {searchName && (

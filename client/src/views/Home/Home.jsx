@@ -1,8 +1,10 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useSelector, useDispatch } from "react-redux"
 import Pokemons from "../../components/Pokemons/Pokemons"
 import { useEffect } from "react"
 import { getAllPokemons } from "../../redux/actions"
 import styles from './home.module.css'
+import Paginated from '../../components/Paginated/Paginated'
 
 const Home = () => {
 
@@ -18,9 +20,9 @@ const Home = () => {
   return (
     <div>
       <div className={styles.container}>
-        {/* <Paginated/> */}
+        <Paginated/>
         <Pokemons allPokemons={allPokemons}/>
-        {/* <Paginated/> */}
+        <Paginated/>
       </div>
     </div>
   )

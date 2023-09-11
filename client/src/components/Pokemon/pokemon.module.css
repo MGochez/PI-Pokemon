@@ -7,6 +7,7 @@
     text-align: center;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: box-shadow 0.2s ease-in-out;
+    backdrop-filter: blur(8px); /*BLUR DE LA CARTA*/
   }
   
   .card:hover {
@@ -30,4 +31,130 @@
   .card h2 {
     font-size: 18px;
     margin: 8px;
+  }
+  
+  .normal {
+    background-color: #A8A77A;
+    color: white;
+    padding: 4px 8px;
+    border-radius: 4px;
+  }
+  
+  .fire {
+    background-color: #EE8130;
+    color: white;
+    padding: 4px 8px;
+    border-radius: 4px;
+  }
+  
+  .water {
+    background-color: #6390F0;
+    color: white;
+    padding: 4px 8px;
+    border-radius: 4px;
+  }
+
+  .electric {
+    background-color: #F7D02C;
+    color: white;
+    padding: 4px 8px;
+    border-radius: 4px;
+  }
+
+  .grass {
+    background-color: #7AC74C;
+    color: white;
+    padding: 4px 8px;
+    border-radius: 4px;
+  }
+
+  .ice {
+    background-color: #96D9D6;
+    color: white;
+    padding: 4px 8px;
+    border-radius: 4px;
+  }
+
+  .fighting {
+    background-color: #C22E28;
+    color: white;
+    padding: 4px 8px;
+    border-radius: 4px;
+  }
+
+  .poison {
+    background-color: #A33EA1;
+    color: white;
+    padding: 4px 8px;
+    border-radius: 4px;
+  }
+
+  .ground {
+    background-color: #E2BF65;
+    color: white;
+    padding: 4px 8px;
+    border-radius: 4px;
+  }
+
+  .flying {
+    background-color: #A98FF3;
+    color: white;
+    padding: 4px 8px;
+    border-radius: 4px;
+  }
+
+  .psychic {
+    background-color: #F95587;
+    color: white;
+    padding: 4px 8px;
+    border-radius: 4px;
+  }
+
+  .bug {
+    background-color: #A6B91A;
+    color: white;
+    padding: 4px 8px;
+    border-radius: 4px;
+  }
+
+  .rock {
+    background-color: #B6A136;
+    color: white;
+    padding: 4px 8px;
+    border-radius: 4px;
+  }
+
+  .ghost {
+    background-color: #735797;
+    color: white;
+    padding: 4px 8px;
+    border-radius: 4px;
+  }
+
+  .dragon {
+    background-color: #6F35FC;
+    color: white;
+    padding: 4px 8px;
+    border-radius: 4px;
+  }
+
+  .dark {
+    background-color: #705746;
+    color: white;
+    padding: 4px 8px;
+    border-radius: 4px;
+  }
+
+  .steel {
+    background-color: #B7B7CE;
+    color: white;
+    padding: 4px 8px;
+    border-radius: 4px;
+  }
+
+  .fairy {
+    background-color: #D685AD;
+    color: white;
+    padding: 4px 8px;
+    border-radius: 4px;
   }

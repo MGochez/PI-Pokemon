@@ -15,7 +15,7 @@ const NavBar = () => {
         </div>
         <div>
           <Link to='/create'>
-                  <button className={styles.tryButton}>Try your own Pokemon !</button>
+              {location.pathname === '/create' ? null : <button className={styles.tryButton}>Crear Pokémon</button>}
           </Link>
         </div>
     </div>
