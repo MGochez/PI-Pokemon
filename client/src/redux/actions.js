@@ -89,6 +89,13 @@ export function createPokemon(pokemon) {
                 type: CREATE_POKEMON,
                 payload: data
             });
+            await dispatch(chooseFilters({
+                origin:'Select Origin',
+                typeOne:'Select filter One',
+                typeTwo:'Select filter two',
+            }))
+            await dispatch(chooseOrder('Select Order'))
+        
             await dispatch(setPokemonGlobal({
                 name: '',
                 image: '',

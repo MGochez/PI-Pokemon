@@ -1,0 +1,53 @@
+/* Estilos CSS para el contenedor de los Pokémon */
+.pokemons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 50px;
+  }
+
+  /* Estilos CSS para cada Pokémon dentro del contenedor */
+.pokemon {
+    width: calc(16.666% - 10px); /* Ancho máximo del 16.666% del contenedor, con un margen entre los elementos */
+    margin-bottom: 20px; /* Espacio entre las filas de Pokémon */
+  }
+  
+  /* Estilos adicionales para hacerlos responsivos en pantallas pequeñas */
+  @media (max-width: 768px) {
+    .pokemon {
+      width: calc(25% - 10px); /* Ancho máximo del 25% en pantallas más pequeñas */
+    }
+  }
+  
+  /* Estilos adicionales para hacerlos responsivos en pantallas aún más pequeñas */
+  @media (max-width: 480px) {
+    .pokemon {
+      width: calc(50% - 10px); /* Ancho máximo del 50% en pantallas muy pequeñas */
+    }
+  }
+  
+  /* Estilos para centrar un solo Pokémon cuando haya uno por hilera */
+  @media (max-width: 480px) {
+    .pokemons .pokemon:first-child:nth-last-child(1) {
+      width: 100%; /* Ancho del 100% para centrar un solo elemento */
+      margin-left: auto;
+      margin-right: auto;
+      justify-content: center;
+    }
+  }
+
+  .filterRow {
+    display: flex; /* Utiliza flexbox para alinear los elementos en una fila */
+    justify-content:center; /* Espacio uniforme entre los elementos */
+    align-items: center; /* Centra verticalmente los elementos */
+    margin-bottom: 20px; /* Agrega margen inferior opcional para separar los filtros de otros elementos */
+    margin-top: 20px;
+    background-color: #333333a9;
+    backdrop-filter: blur(8px);
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 5px;
+    margin: 16px;
+  }
+  
+  /* Otros estilos que desees aplicar a tus elementos de filtro */

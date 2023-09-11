@@ -3,7 +3,10 @@ import { useEffect, useState } from "react";
 import { validatePokemon, validateTypes } from "../utils/validation";
 import { createPokemon, setPokemonGlobal, setTypesGlobal } from "../redux/actions";
 
+
 export default function useForm(){
+
+  const pokeURL = 'https://e7.pngegg.com/pngimages/706/299/png-clipart-pokemon-pokeball-illustration-pikachu-ash-ketchum-pokemon-coloring-book-pokeball-rim-pokemon.png'
 
   const dispatch = useDispatch()
   const pokemonCreated = useSelector((state)=> state.pokemonCreated)
@@ -63,7 +66,7 @@ export default function useForm(){
       let newPokemon = {
         ...pokemon,
         name: pokemon.name.toLowerCase(),
-        image: pokemon.image,
+        image: pokemon.image || pokeURL,
         hp: pokemon.hp,
         attack: pokemon.attack,
         defense: pokemon.defense,

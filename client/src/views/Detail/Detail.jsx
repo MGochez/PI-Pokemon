@@ -2,7 +2,7 @@
 import { useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { useDispatch } from "react-redux";
-
+import Loading from "../../components/Loading/Loading";
 import { useEffect } from "react";
 import { searchById } from "../../redux/actions";
 import styles from './detail.module.css'
@@ -13,6 +13,7 @@ const Detail = () => {
   let dispatch = useDispatch()
 
   let pokemonFoundById = useSelector((state) => state.pokemonFoundById)
+  let loading = useSelector((state) => state.loading);
   let { name, image, types, hp, attack, defense, speed, height, weight, spattack, spdefense} = pokemonFoundById
 
   const normalizeTypes = (types) => {
@@ -52,7 +53,7 @@ const Detail = () => {
 
   // =============================================================
 
-
+  if (loading) return <Loading />;
   return (
     <div className={styles.card}>
       <div className={styles.header}>

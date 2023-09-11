@@ -1,5 +1,6 @@
 import { useSelector } from "react-redux"
 import useForm from '../../Hooks/useForm'
+import styles from './form.module.css'
 
 const Form = () => {
 
@@ -20,10 +21,10 @@ const Form = () => {
 
 
   return (
-    <div >
+    <div className={styles.formContainer}>
     
-    <form >
-      <div >
+    <form className={styles.form}>
+      <div className={styles.formSection}>
         <p>* Required fields</p>
         <label>Name*</label>
         <input value={pokemonCreated.name} name="name" onChange={handleInput} />
@@ -74,11 +75,11 @@ const Form = () => {
         <input value={pokemonCreated.weight} type="text" name="weight" onChange={handleInput} />
         <p>{errorsPokemon?.weight}</p>
       </div>
-      <div>
+      <div className={styles.formSection}>
         <label>Types</label>
-        <div>
+        <div className={styles.typeContainer}>
           {allTypes.map((type) => (
-            <div key={type.name}>
+            <div key={type.name} className={styles.typeItem}>
               <input
                 type="checkbox"
                 name={type.name}

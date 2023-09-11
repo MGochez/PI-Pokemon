@@ -1,0 +1,42 @@
+/* Form.module.css */
+
+/* Estilos para el contenedor del formulario */
+.formContainer {
+    display: flex;
+    flex-direction: column;
+    align-items:flex-start;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: #333333a9;
+    backdrop-filter: blur(8px);
+    margin: 20px;
+  }
+  
+  /* Estilos para el formulario */
+  .form {
+    width: 100%;
+    max-width: 400px; /* Ancho máximo del formulario */
+  }
+  
+  /* Estilos para cada sección del formulario */
+  .formSection {
+    margin-bottom: 20px;
+  }
+  
+  /* Estilos para la caja de tipos de Pokémon */
+  .typeContainer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  
+  /* Estilos para cada elemento de tipo */
+  .typeItem {
+    display: flex;
+    align-items: center;
+  }
+  
+  /* Añade el resto de tus estilos... */
+  

@@ -8,6 +8,7 @@
     border-radius: 5px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     background-color: #333333a9;
+    backdrop-filter: blur(8px)
   }
   
   /* Estilos para la imagen grande */
@@ -185,3 +186,4 @@
     padding: 4px 8px;
     border-radius: 4px;
   }
+
