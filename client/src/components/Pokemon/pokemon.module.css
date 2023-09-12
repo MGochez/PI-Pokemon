@@ -8,8 +8,8 @@
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: box-shadow 0.2s ease-in-out;
     backdrop-filter: blur(8px); /*BLUR DE LA CARTA*/
-    /* width: 150px; */ /* Establece un ancho fijo para la tarjeta */
-    /* height: 300px;  *//* Establece una altura fija para la tarjeta */
+    width: 150px; /* Establece un ancho fijo para la tarjeta */
+    height: 300px; /* Establece una altura fija para la tarjeta */
   }
   
   .card:hover {

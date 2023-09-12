@@ -2,17 +2,18 @@
 .pokemons {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: space-evenly;
     
   }
 
   /* Estilos CSS para cada Pokémon dentro del contenedor */
-
+.pokemon {
+  width: calc(16.6667% - 10px);
+}
   
   /* Estilos adicionales para hacerlos responsivos en pantallas pequeñas */
   @media (max-width: 768px) {
     .pokemon {
-      
       width: calc(25% - 10px); /* Ancho máximo del 25% en pantallas más pequeñas */
     }
   }
@@ -37,7 +38,7 @@
 
   .filterRow {
     display: flex; /* Utiliza flexbox para alinear los elementos en una fila */
-    justify-content:center; /* Espacio uniforme entre los elementos */
+    position: relative;/* Espacio uniforme entre los elementos */
     align-items: center; /* Centra verticalmente los elementos */
     margin-bottom: 20px; /* Agrega margen inferior opcional para separar los filtros de otros elementos */
     margin-top: 20px;
@@ -47,8 +48,23 @@
     border-radius: 8px;
     padding: 5px;
     margin: 16px;
+    width: 100%;
+    height: 50px;
   }
   
+  .select {
+    margin: 0 auto;
+    width: 100%;
+  }
 
-
+  .reset {
+    position: absolute;
+    right: 10px;
+    height: 20px;
+    top: 9px;
+  }
+  
+  .container {
+    margin-top: 50px;
+  }
   /* Otros estilos que desees aplicar a tus elementos de filtro */

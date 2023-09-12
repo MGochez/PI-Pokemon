@@ -93,16 +93,17 @@ const Home = () => {
 
   return (
     <div>
-
-      <div className={styles.filterRow}>
-        <div>
+      <div className={styles.container}>
+        <div className={styles.filterRow}>
+        <div className={styles.select}>
     {/*------------------------------------------------- ORIGEN ----------------------------------------------------------------------------*/}
+        
           <select value={filtersChosenLocal.origin === 'Seleccionar origen' ? 'Todos' : filtersChosenLocal.origin} onChange={handleOrigin}>
             <option value="all">Todos</option>
             <option value="api">API</option>
             <option value="db">DataBase</option>
           </select>
-        </div>
+        
 
     {/*------------------------------------------------- FILTRO 1 ----------------------------------------------------------------------------*/}
 
@@ -124,8 +125,9 @@ const Home = () => {
               })}
             </select>
           ): null}
+
     {/*------------------------------------------------- ORDEN ----------------------------------------------------------------------------*/}
-        <div>
+
           <select value={orderChosenLocal === 'Seleccionar Orden' ? '' : orderChosenLocal } onChange={handleOrder}>
             <option disabled value=''>Selecionar orden</option>
             <option value="ascending">A ➝ Z</option>
@@ -133,9 +135,10 @@ const Home = () => {
             <option value="attackAscending">Attack - ➝ +</option>
             <option value="attackDescending">Attack + ➝ -</option>
           </select>
-          
         </div>
-          <button onClick={reset}>Reiniciar Filtros</button>
+          <div className={styles.reset}>
+            <button onClick={reset}>Reiniciar Filtros</button>
+          </div>
         </div>
       
       <Paginated/>
@@ -153,6 +156,7 @@ const Home = () => {
 
       <Paginated/>
 
+      </div>
     </div>
   )
 }

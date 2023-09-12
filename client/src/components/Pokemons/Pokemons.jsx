@@ -1,4 +1,4 @@
-/* eslint-disable react/prop-types */
+/* 
 import Pokemon from "../Pokemon/Pokemon"
 
 const Pokemons = (props) => {
@@ -19,4 +19,4 @@ const Pokemons = (props) => {
     )
 }
 
-export default Pokemons
+export default Pokemons */
