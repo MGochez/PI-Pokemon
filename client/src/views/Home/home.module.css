@@ -3,18 +3,16 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-  
+    
   }
 
   /* Estilos CSS para cada Pokémon dentro del contenedor */
-.pokemon {
-    width: calc(16.666% - 10px); /* Ancho máximo del 16.666% del contenedor, con un margen entre los elementos */
-    margin-bottom: 20px; /* Espacio entre las filas de Pokémon */
-  }
+
   
   /* Estilos adicionales para hacerlos responsivos en pantallas pequeñas */
   @media (max-width: 768px) {
     .pokemon {
+      
       width: calc(25% - 10px); /* Ancho máximo del 25% en pantallas más pequeñas */
     }
   }
@@ -22,6 +20,7 @@
   /* Estilos adicionales para hacerlos responsivos en pantallas aún más pequeñas */
   @media (max-width: 480px) {
     .pokemon {
+      
       width: calc(50% - 10px); /* Ancho máximo del 50% en pantallas muy pequeñas */
     }
   }
@@ -50,4 +49,6 @@
     margin: 16px;
   }
   
+
+
   /* Otros estilos que desees aplicar a tus elementos de filtro */

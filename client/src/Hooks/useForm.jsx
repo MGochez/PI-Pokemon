@@ -6,7 +6,7 @@ import { createPokemon, setPokemonGlobal, setTypesGlobal } from "../redux/action
 
 export default function useForm(){
 
-  const pokeURL = 'https://e7.pngegg.com/pngimages/706/299/png-clipart-pokemon-pokeball-illustration-pikachu-ash-ketchum-pokemon-coloring-book-pokeball-rim-pokemon.png'
+  const defaultImage = 'https://e7.pngegg.com/pngimages/706/299/png-clipart-pokemon-pokeball-illustration-pikachu-ash-ketchum-pokemon-coloring-book-pokeball-rim-pokemon.png'
 
   const dispatch = useDispatch()
   const pokemonCreated = useSelector((state)=> state.pokemonCreated)
@@ -66,7 +66,7 @@ export default function useForm(){
       let newPokemon = {
         ...pokemon,
         name: pokemon.name.toLowerCase(),
-        image: pokemon.image || pokeURL,
+        image: pokemon.image || defaultImage,
         hp: pokemon.hp,
         attack: pokemon.attack,
         defense: pokemon.defense,

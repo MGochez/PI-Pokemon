@@ -12,7 +12,6 @@ const pokemonIdHandler = async (req, res) => {
             return uuidRegex.test(str);
           };
         
-
         if(isValidUUID(idPokemon)) {
 
             const idPokemonDB = await getPokemonIdDB(idPokemon);

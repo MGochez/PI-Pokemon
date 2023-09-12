@@ -27,8 +27,6 @@ const createNewPokemon = async (
             weight,
         });
 
-        // arr vacio y pushearle los types a ese. ↓ ↓ ↓ ↓ ↓ ↓ ↓ 
-
         const types = type.map(async (tipo) => {
             const existingType = await Type.findOne({
                 where: {name: tipo}
@@ -38,8 +36,6 @@ const createNewPokemon = async (
                 await newPokemon.addType(existingType);
             }
         });
-
-        // ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ 
 
         await Promise.all(types)
 

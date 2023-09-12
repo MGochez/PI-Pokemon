@@ -48,6 +48,7 @@ export const searchByName = (name) => {
         try {
             let response = await axios.get(`http://localhost:3001/pokemons/?name=${name}`);
             let data = response.data;
+            console.log(data)
             return dispatch({
                 type: SEARCH_BY_NAME,
                 payload: data
@@ -61,9 +62,9 @@ export const searchByName = (name) => {
 export const searchById = (id) => {
     return async (dispatch) => {
         try {
-            if (id === 'reset' ) {return dispatch({
-                type: SEARCH_BY_ID,
-                payload: []
+            if (id === 'reset' ) {return dispatch({     // con este dispatch establezco
+                type: SEARCH_BY_ID,                     // que el /detail/:id se reinicie y no me muestre
+                payload: []                             // la data del pokemon anterior 
             })}
             dispatch(setLoading(true))
             let response = await axios.get(`http://localhost:3001/pokemons/${id}`);
@@ -90,11 +91,11 @@ export function createPokemon(pokemon) {
                 payload: data
             });
             await dispatch(chooseFilters({
-                origin:'Select Origin',
-                typeOne:'Select filter One',
-                typeTwo:'Select filter two',
+                origin:'Seleccionar origen',
+                typeOne:'Seleccionar filtro 1',
+                typeTwo:'Seleccionar filtro 2',
             }))
-            await dispatch(chooseOrder('Select Order'))
+            await dispatch(chooseOrder('Seleccionar Orden'))
         
             await dispatch(setPokemonGlobal({
                 name: '',
@@ -109,7 +110,7 @@ export function createPokemon(pokemon) {
                 weight: '',
             }));
             await dispatch(setTypesGlobal([]));
-            return dispatch(setCurrentPage());
+            return dispatch(setCurrentPage(1));
         } catch (error) {
             console.log(error)
             alert(error.response.data)

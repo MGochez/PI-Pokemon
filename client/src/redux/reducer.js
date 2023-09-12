@@ -5,12 +5,12 @@ const initialState = {
     copyAllPokemons: [],
   
     filtersChosen: {
-      origin: "Select Origin",
-      typeOne: "Select filter One",
-      typeTwo: "Select filter two",
+      origin: "Seleccionar origen",
+      typeOne: "Seleccionar filtro 1",
+      typeTwo: "Seleccionar filtro 2",
     },
   
-    orderChosen: "Select Order",
+    orderChosen: "Seleccionar Orden",
   
     pokemonFoundById: {},
   
@@ -29,13 +29,14 @@ const rootReducer = (state = initialState, action) => {
         allPokemons: action.payload,
         copyAllPokemons: action.payload,
       };
-//-----------------------------------------FILTERS-------------------------------------------------------------------------------------------------------
+    //-----------------------------------------FILTERS-------------------------------------------------------------------------------------------------------
     case "CHOOSE_FILTERS":
       var filtered = [...state.copyAllPokemons];
+
       if (action.payload.origin !== "all") {
         if (action.payload.origin === "api") {
           filtered = filtered.filter((pokemon) => {
-            if (!isNaN(Number(pokemon.id))) return pokemon;
+            if (!isNaN(Number(pokemon.id))) return pokemon;  // 
           });
         }
         if (action.payload.origin === "db") {
@@ -45,19 +46,21 @@ const rootReducer = (state = initialState, action) => {
         }
       }
 
-      if (action.payload.typeOne !== "Select filter One") {
+      if (action.payload.typeOne !== "Seleccionar filtro 1") {
         filtered = filtered.filter((pokemon) => {
+          console.log(pokemon);
           if (
-            pokemon.types.find((type) => type.name === action.payload.typeOne)
+            pokemon.types.find((type) => type === action.payload.typeOne)
           )
             return pokemon;
         });
+        
       }
 
-      if (action.payload.typeTwo !== "Select filter two" && action.payload.typeTwo !== "") {
+      if (action.payload.typeTwo !== "Seleccionar filtro 2" && action.payload.typeTwo !== "") {
         filtered = filtered.filter((pokemon) => {
           if (
-            pokemon.types.find((type) => type.name === action.payload.typeTwo)
+            pokemon.types.find((type) => type === action.payload.typeTwo)
           )
             return pokemon;
         });
@@ -73,13 +76,13 @@ const rootReducer = (state = initialState, action) => {
       return {
         ...state,
         filtersChosen: {
-          origin: "Select Origin",
-          typeOne: "Select filter One",
-          typeTwo: "Select filter two",
-          orderChosen: "Select Order",
+          origin: "Seleccionar origen",
+          typeOne: "Seleccionar filtro 1",
+          typeTwo: "Seleccionar filtro 2",
+          orderChosen: "Seleccionar Orden",
         },
       };
-//-----------------------------------------ORDER---------------------------------------------------------------
+    //-----------------------------------------ORDER---------------------------------------------------------------
       case "CHOOSE_ORDER":
         if (action.payload === "ascending") {
           return {
@@ -119,7 +122,7 @@ const rootReducer = (state = initialState, action) => {
           orderChosen: action.payload,
           allPokemons: [...state.allPokemons],
         };
-//-------------------------------------------------------------------------------------------------------------------------------------------------------------
+    //-------------------------------------------------------------------------------------------------------------------------------------------------------------
         
     case "REFILL_POKEMONS":
       return {
@@ -128,6 +131,7 @@ const rootReducer = (state = initialState, action) => {
       };
 
     case "SEARCH_BY_NAME":
+      console.log('REDUCER SEARCH BY NAME ' + action.payload.name)
       return {
         ...state,
         allPokemons: [
