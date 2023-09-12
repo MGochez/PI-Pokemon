@@ -48,7 +48,6 @@ export const searchByName = (name) => {
         try {
             let response = await axios.get(`http://localhost:3001/pokemons/?name=${name}`);
             let data = response.data;
-            console.log(data)
             return dispatch({
                 type: SEARCH_BY_NAME,
                 payload: data
@@ -110,6 +109,7 @@ export function createPokemon(pokemon) {
                 weight: '',
             }));
             await dispatch(setTypesGlobal([]));
+            await dispatch(getAllPokemons());
             return dispatch(setCurrentPage(1));
         } catch (error) {
             console.log(error)

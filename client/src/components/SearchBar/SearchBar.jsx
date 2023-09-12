@@ -32,7 +32,7 @@ const SearchBar = () => {
               />
               <div className={`${styles.iconContainer} sm:items-center sm:justify-center`}>
                 {searchName && (
-                  <FaSearch className={styles.icon} onClick={() => handleSearchBar(searchName.toLocaleLowerCase())}>
+                  <FaSearch className={styles.icon} onClick={() => handleSearchBar(searchName.toLowerCase())}>
                     Search
                   </FaSearch>
                 )}

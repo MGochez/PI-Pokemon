@@ -131,14 +131,11 @@ const rootReducer = (state = initialState, action) => {
       };
 
     case "SEARCH_BY_NAME":
-      console.log('REDUCER SEARCH BY NAME ' + action.payload.name)
+
+     
       return {
         ...state,
-        allPokemons: [
-          state.copyAllPokemons.find(
-            (pokemon) => action.payload.name === pokemon.name
-          ),
-        ],
+        allPokemons: action.payload
       };
     case "SEARCH_BY_ID":
       return {
@@ -181,6 +178,7 @@ const rootReducer = (state = initialState, action) => {
       };
 
     case "SET_TYPE_POKEMON_CREATED":
+      console.log('reducer set type' + action.payload)
       return {
         ...state,
         typesPokemonCreated: action.payload,
