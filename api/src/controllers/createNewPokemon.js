@@ -42,7 +42,6 @@ const createNewPokemon = async (
         return {message: 'Su nuevo Pokémon ha sido creado.'}
 
     } catch (error) {
-        console.log(error);
         throw new Error('No se pudo crear el Pokémon')
     }
 }

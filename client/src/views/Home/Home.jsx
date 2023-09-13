@@ -37,7 +37,6 @@ const Home = () => {
   },[filtersChosen])
 
   let handleTypes = function (event) {
-    console.log(event.target.value)
     setFiltersChosenLocal({
       ...filtersChosenLocal,
       typeOne: event.target.value,
@@ -95,36 +94,36 @@ const Home = () => {
     <div>
       <div className={styles.container}>
         <div className={styles.filterRow}>
-        <div className={styles.select}>
+          <div className={styles.select}>
     {/*------------------------------------------------- ORIGEN ----------------------------------------------------------------------------*/}
         
-          <select value={filtersChosenLocal.origin === 'Seleccionar origen' ? 'Todos' : filtersChosenLocal.origin} onChange={handleOrigin}>
-            <option value="all">Todos</option>
-            <option value="api">API</option>
-            <option value="db">DataBase</option>
-          </select>
-        
+            <select value={filtersChosenLocal.origin === 'Seleccionar origen' ? 'Todos' : filtersChosenLocal.origin} onChange={handleOrigin}>
+              <option value="all">Todos</option>
+              <option value="api">API</option>
+              <option value="db">DataBase</option>
+            </select>
 
     {/*------------------------------------------------- FILTRO 1 ----------------------------------------------------------------------------*/}
 
-        <select value={filtersChosenLocal.typeOne === 'Seleccionar filtro 1' ? '' : filtersChosenLocal.typeOne} onChange={handleTypes}>
-          <option disabled value="">Seleccionar tipo</option>
-          {allTypes.map((type) => {
-            return <option key={type.id} value={type.name}>{type.name}</option>;
-          })}
-        </select>
-
-    {/*------------------------------------------------- FILTRO 2 ----------------------------------------------------------------------------*/}
-
-        {filtersChosenLocal.typeOne !=='Seleccionar filtro 1' ? (
-            <select value={filtersChosenLocal.typeTwo === 'Seleccionar filtro 2' ? '' : filtersChosenLocal.typeTwo} onChange={handleSecondTypes}>
-              <option disabled value="">Select second type</option>
-              <option value="">All</option>
+            <select value={filtersChosenLocal.typeOne === 'Seleccionar filtro 1' ? '' : filtersChosenLocal.typeOne} onChange={handleTypes}>
+              <option disabled value="">Seleccionar tipo</option>
               {allTypes.map((type) => {
                 return <option key={type.id} value={type.name}>{type.name}</option>;
               })}
             </select>
-          ): null}
+
+    {/*------------------------------------------------- FILTRO 2 ----------------------------------------------------------------------------*/}
+
+            {filtersChosenLocal.typeOne !=='Seleccionar filtro 1' ? (
+                <select value={filtersChosenLocal.typeTwo === 'Seleccionar filtro 2' ? '' : filtersChosenLocal.typeTwo} onChange={handleSecondTypes}>
+                  <option disabled value="">Select second type</option>
+                  <option value="">All</option>
+                  {allTypes.map((type) => {
+                    return <option key={type.id} value={type.name}>{type.name}</option>;
+                  })}
+                </select>
+              ): null
+            }
 
     {/*------------------------------------------------- ORDEN ----------------------------------------------------------------------------*/}
 
@@ -136,6 +135,7 @@ const Home = () => {
             <option value="attackDescending">Attack + ➝ -</option>
           </select>
         </div>
+
           <div className={styles.reset}>
             <button onClick={reset}>Reiniciar Filtros</button>
           </div>

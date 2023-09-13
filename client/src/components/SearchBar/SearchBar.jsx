@@ -11,7 +11,6 @@ const SearchBar = () => {
     let [searchName, setSearchName] = useState("")
   
     let handleChange = function (event) {
-      console.log(event.target.value)
       setSearchName(event.target.value);
     }
   

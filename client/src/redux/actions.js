@@ -1,6 +1,20 @@
 import axios from "axios";
 
-import { ALL_POKEMON, CHOOSE_FILTERS, CHOOSE_ORDER, CLEAN_DETAIL, CREATE_POKEMON, GET_TYPES, REFILL_POKEMONS, SEARCH_BY_ID, SEARCH_BY_NAME, SET_CURRENT_PAGE, SET_LOADING, SET_POKEMON, SET_TYPE_POKEMON_CREATED } from "./types";
+import { 
+        ALL_POKEMON, 
+        CHOOSE_FILTERS,
+        CHOOSE_ORDER,
+        CLEAN_DETAIL,
+        CREATE_POKEMON,
+        GET_TYPES,
+        REFILL_POKEMONS,
+        SEARCH_BY_ID,
+        SEARCH_BY_NAME,
+        SET_CURRENT_PAGE,
+        SET_LOADING,
+        SET_POKEMON,
+        SET_TYPE_POKEMON_CREATED 
+    } from "./types";
 
 export const getAllTypes = () => {
     return async (dispatch) => {
@@ -112,7 +126,6 @@ export function createPokemon(pokemon) {
             await dispatch(getAllPokemons());
             return dispatch(setCurrentPage(1));
         } catch (error) {
-            console.log(error)
             alert(error.response.data)
         }
     }

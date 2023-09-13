@@ -10,6 +10,9 @@
   border-radius: 8px;
   padding: 5px;
   margin: 16px;
+  max-width: 350px;
+  position: relative;
+  left: 47vh;
 }
 
 .button {

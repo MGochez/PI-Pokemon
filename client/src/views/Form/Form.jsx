@@ -32,7 +32,7 @@ const Form = () => {
       </div>
       <div>
         <label>Imagen (URL)* </label>
-        <input value={pokemonCreated.image} type='text' name="image" onChange={handleInput} placeholder="default image if empty"/>
+        <input value={pokemonCreated.image} type='text' name="image" onChange={handleInput} placeholder="Default si está vacío"/>
         <p>{errorsPokemon?.image}</p>
       </div>
       <div>
@@ -61,7 +61,7 @@ const Form = () => {
         <p>{errorsPokemon?.spdefense}</p>
       </div>
       <div>
-        <label>Speed </label>
+        <label>Speed *</label>
         <input value={pokemonCreated.speed} type="text" name="speed" onChange={handleInput} />
         <p>{errorsPokemon?.speed}</p>
       </div>

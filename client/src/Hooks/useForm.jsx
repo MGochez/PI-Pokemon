@@ -4,7 +4,7 @@ import { validatePokemon, validateTypes } from "../utils/validation";
 import { createPokemon, setPokemonGlobal, setTypesGlobal } from "../redux/actions";
 
 
-export default function useForm(){
+export default function useForm() {
 
   const defaultImage = 'https://e7.pngegg.com/pngimages/706/299/png-clipart-pokemon-pokeball-illustration-pikachu-ash-ketchum-pokemon-coloring-book-pokeball-rim-pokemon.png'
 
@@ -85,7 +85,7 @@ export default function useForm(){
       const newPokemonName = newPokemon.name.toLowerCase();
 
       if (!existingPokemonNames.includes(newPokemonName)) {//informo que se creo el pokemon solo si el nombre del nuevo pokemon coincide con alguno de mi arreglo total
-        alert('Pokemon created!')
+        alert('Pokemon creado!')
       } 
     }
   };

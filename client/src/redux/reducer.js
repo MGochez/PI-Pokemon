@@ -36,7 +36,7 @@ const rootReducer = (state = initialState, action) => {
       if (action.payload.origin !== "all") {
         if (action.payload.origin === "api") {
           filtered = filtered.filter((pokemon) => {
-            if (!isNaN(Number(pokemon.id))) return pokemon;  // 
+            if (!isNaN(Number(pokemon.id))) return pokemon; 
           });
         }
         if (action.payload.origin === "db") {
@@ -48,7 +48,6 @@ const rootReducer = (state = initialState, action) => {
 
       if (action.payload.typeOne !== "Seleccionar filtro 1") {
         filtered = filtered.filter((pokemon) => {
-          console.log(pokemon);
           if (
             pokemon.types.find((type) => type === action.payload.typeOne)
           )
@@ -79,10 +78,10 @@ const rootReducer = (state = initialState, action) => {
           origin: "Seleccionar origen",
           typeOne: "Seleccionar filtro 1",
           typeTwo: "Seleccionar filtro 2",
-          orderChosen: "Seleccionar Orden",
+          orderChosen: "Seleccionar Orden"
         },
       };
-    //-----------------------------------------ORDER---------------------------------------------------------------
+      //-----------------------------------------ORDER---------------------------------------------------------------
       case "CHOOSE_ORDER":
         if (action.payload === "ascending") {
           return {
@@ -131,22 +130,23 @@ const rootReducer = (state = initialState, action) => {
       };
 
     case "SEARCH_BY_NAME":
-
-     
       return {
         ...state,
         allPokemons: action.payload
       };
+
     case "SEARCH_BY_ID":
       return {
         ...state,
         pokemonFoundById: action.payload,
       };
+
     case "CLEAN_DETAIL":
       return {
         ...state,
         pokemonFoundById: {},
       };
+
     case "CREATE_POKEMON":
       return {
         ...state,
@@ -171,14 +171,12 @@ const rootReducer = (state = initialState, action) => {
         allTypes: action.payload,
       };
     case "SET_POKEMON":
-      console.log('reducer', action.payload)
       return {
         ...state,
         pokemonCreated: action.payload,
       };
 
     case "SET_TYPE_POKEMON_CREATED":
-      console.log('reducer set type' + action.payload)
       return {
         ...state,
         typesPokemonCreated: action.payload,

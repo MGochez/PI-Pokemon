@@ -8,9 +8,24 @@
     border-radius: 5px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     background-color: #333333a9;
-    backdrop-filter: blur(8px)
+    backdrop-filter: blur(8px);
+    margin-top: 60px;
+    
+    justify-content: space-between;
+    flex-wrap: nowrap;
   }
   
+  .types {
+    margin: 0;
+    margin-left: auto;
+    display: flex;
+    justify-content: center;
+  }
+
+  .types h2 {
+    margin: 0 10px;
+  }
+
   /* Estilos para la imagen grande */
   .largeImage {
     width: 100%; /* Aumenta el tamaño de la imagen al 200% si el ID es un número */
@@ -34,6 +49,34 @@
   .spaced {
     margin-bottom: 10px; /* Espaciado vertical entre las filas */
     overflow-wrap: break-word; /* Permite que el texto largo se ajuste automáticamente */
+  }
+
+  .name {
+    display: flex;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .name h1 {
+    text-align: center;
+    margin: 0 auto;
+  }
+
+  .info {
+    display: flex;
+  }
+
+  .leftCard{
+    padding: 10px;
+    width: 50%
+  }
+
+  .rightCard {
+    padding: 10px;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
 
   .hp {

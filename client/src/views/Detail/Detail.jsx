@@ -56,47 +56,53 @@ const Detail = () => {
   if (loading) return <Loading />;
   return (
     <div className={styles.card}>
-      <div className={styles.header}>
+      <div className={styles.name}>
         <h1>{name}</h1>
-        <img src={image} className={id && !isNaN(id) ? styles.largeImage : ""} alt={name} />
       </div>
-    
-      <div className={styles.spaced}>
-        <h2 className={styles.centered}>#ID: {id}</h2>
-      </div>
+      <div className={styles.info}>
+      <div className={styles.leftCard}>
+        <div className={styles.header}>
+          
+          <img src={image} className={id && !isNaN(id) ? styles.largeImage : ""} alt={`Imagen de ${name}`} />
+        </div>
 
-      <div className={styles.types}>
-      <h2 className={styles[type0]}>{type0}</h2> <h2 className={styles[type1]}>{type1 && type1}</h2>
-      </div>
+        <div className={styles.spaced}>
+          <h2 className={styles.centered}>#ID: {id}</h2>
+        </div>
 
+        <div className={styles.types}>
+          <h2 className={styles[type0]}>{type0}</h2> <h2 className={styles[type1]}>{type1 && type1}</h2>
+        </div>
+      </div>
       
+      <div className={styles.rightCard}>
+        <div className={`${styles.row} ${styles.spaced}`}>
+          <h2 className={`${styles.centered} ${styles.hp}`}>HP: {hp}</h2>
+          <h2 className={`${styles.centered} ${styles.attack}`}>Attack: {attack}</h2>
+        </div>
 
-      <div className={`${styles.row} ${styles.spaced}`}>
-        <h2 className={`${styles.centered} ${styles.hp}`}>HP: {hp}</h2>
-        <h2 className={`${styles.centered} ${styles.attack}`}>Attack: {attack}</h2>
+        <div className={`${styles.row} ${styles.spaced}`}>
+          <h2 className={`${styles.centered} ${styles.spattack}`}>SP Attack: {spattack}</h2>
+          <h2 className={`${styles.centered} ${styles.spdefense}`}>SP Defense: {spdefense}</h2>
+        </div>
+
+        <div className={`${styles.row} ${styles.spaced}`}>
+          <h2 className={`${styles.centered} ${styles.defense}`}>Defense: {defense}</h2>
+          {speed !== 0 && (
+            <h2 className={`${styles.centered} ${styles.speed}`}>Speed: {speed}</h2>
+          )}
+        </div>
+
+        <div className={`${styles.row} ${styles.spaced}`}>
+          {weight !== 0 && (
+            <h2 className={`${styles.centered}`}>Weight: {weight}kg </h2>
+          )}
+          {height !== 0 && (
+            <h2 className={`${styles.centered}`}>Height: {height}m </h2>
+          )}
+        </div>
       </div>
-
-      <div className={`${styles.row} ${styles.spaced}`}>
-        <h2 className={`${styles.centered} ${styles.spattack}`}>SP Attack: {spattack}</h2>
-        <h2 className={`${styles.centered} ${styles.spdefense}`}>SP Defense: {spdefense}</h2>
       </div>
-
-      <div className={`${styles.row} ${styles.spaced}`}>
-        <h2 className={`${styles.centered} ${styles.defense}`}>Defense: {defense}</h2>
-        {speed !== 0 && (
-          <h2 className={`${styles.centered} ${styles.speed}`}>Speed: {speed}</h2>
-        )}
-      </div>
-
-      <div className={`${styles.row} ${styles.spaced}`}>
-        {weight !== 0 && (
-          <h2 className={`${styles.centered}`}>Weight: {weight}kg </h2>
-        )}
-        {height !== 0 && (
-          <h2 className={`${styles.centered}`}>Height: {height}m </h2>
-        )}
-      </div>
-
     </div>
   )
 }

@@ -18,8 +18,6 @@ const pokemonCreateHandler = async (req, res) => {
             type
         } = req.body;
 
-        // console.log({name, image, hp, attack, defense, speed, height ,weight, type});
-
         const apiPokemons = await getAllPokemonsApi();
         const dbPokemons = await getAllPokemonsDB();
 
