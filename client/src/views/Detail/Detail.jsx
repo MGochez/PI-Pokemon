@@ -63,7 +63,7 @@ const Detail = () => {
       <div className={styles.leftCard}>
         <div className={styles.header}>
           
-          <img src={image} className={id && !isNaN(id) ? styles.largeImage : ""} alt={`Imagen de ${name}`} />
+          <img src={image} className={styles.largeImage} alt={`Imagen de ${name}`} />
         </div>
 
         <div className={styles.spaced}>

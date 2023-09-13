@@ -24,11 +24,11 @@ const Pokemon = ({pokemon}) => {
     const type1 = types[1]
 
     return (
-        <div className={styles.card}>
+        <div className={styles.card} onClick={navigateHandler}>
             <div>
                 <h1>{capitalizeFirstLetter(name)}</h1>
             </div>
-            <img src={image} onClick={navigateHandler} alt={`Imagen de ${name}`}/>
+            <img src={image} alt={`Imagen de ${name}`}/>
             <div className={styles.types}>
                 <h2 className={styles[type0]}>{type0}</h2> <h2 className={styles[type1]}>{type1 && type1}</h2>
             </div>

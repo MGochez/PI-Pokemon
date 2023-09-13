@@ -19,7 +19,12 @@ export function validatePokemon(pokemon) {
         return regexLetters.test(input);
     }
 
-    const {name , hp, attack, defense, spattack, spdefense, speed, height, weight } = pokemon;
+    function onlyURL (input) {
+        const regexURL =  /^(http(s):\/\/.)[-a-zA-Z0-9@:%._~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_.~#?&//=]*)$/
+         return regexURL.test(input)
+    }
+
+    const {name , image ,hp, attack, defense, spattack, spdefense, speed, height, weight } = pokemon;
 
     //---------------------------- name ----------------------------------------
     
@@ -31,7 +36,15 @@ export function validatePokemon(pokemon) {
         errorsPokemon.name = "El nombre del pokemon debe tener como máximo 20 letras"
     }
 
-    //---------------------------- hp ----------------------------------------
+    //---------------------------- URL -------------------------------------------
+
+    if (!image) {
+        //
+    } else if (!onlyURL(image)) {
+        errorsPokemon.image = "Introduce una URL válida"
+    }
+
+    //---------------------------- hp --------------------------------------------
 
     if (!hp) {
         errorsPokemon.hp = "La hp del pokemon no puede ser 0";

@@ -6,7 +6,7 @@ import { createPokemon, setPokemonGlobal, setTypesGlobal } from "../redux/action
 
 export default function useForm() {
 
-  const defaultImage = 'https://e7.pngegg.com/pngimages/706/299/png-clipart-pokemon-pokeball-illustration-pikachu-ash-ketchum-pokemon-coloring-book-pokeball-rim-pokemon.png'
+  const defaultImage = 'https://imgtr.ee/images/2023/09/13/a50f827d3d0b4847a0669be9950a6853.png'
 
   const dispatch = useDispatch()
   const pokemonCreated = useSelector((state)=> state.pokemonCreated)
@@ -19,7 +19,7 @@ export default function useForm() {
   useEffect(() => {
    setPokemon(pokemonCreated);
    setTypes(typesPokemonCreated);
- }, [pokemonCreated, typesPokemonCreated]);
+  }, [pokemonCreated, typesPokemonCreated]);
 
 
   const [errorsPokemon, setErrorsPokemon] = useState({});
