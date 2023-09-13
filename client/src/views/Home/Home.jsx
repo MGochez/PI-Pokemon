@@ -75,6 +75,7 @@ const Home = () => {
       ...filtersChosen,
      origin: event.target.value,
     }))
+    dispatch(setCurrentPage(1))
   }
   
   let reset = function () {
