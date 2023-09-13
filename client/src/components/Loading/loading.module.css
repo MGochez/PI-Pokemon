@@ -1,7 +1,21 @@
+.container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin: 49vh auto;  
+  background-color: #333333a9;
+  backdrop-filter: blur(8px);
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 16px;
+  max-width: 100px;
+}
+
 .loader {
     height: 60px;
     aspect-ratio: 1;
     position: relative;
+    margin: 16px auto;
   }
   
   .loader::before,
