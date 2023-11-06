@@ -1,6 +1,6 @@
 ![Landing Page](client/src/assets/Pokepage/Landing.png)
 ![Homepage](client/src/assets/Pokepage/Home.png)
-![Home filters](client/src/assets/Pokepage/Home Filtrado.png)
+![Home filters]([client/src/assets/Pokepage/Home Filtrado.png])
 ![Detail API](client/src/assets/Pokepage/DetailAPI.png)
 ![Detail DB](client/src/assets/Pokepage/DetailDB.png)
 ![Form](client/src/assets/Pokepage/Form.png)
