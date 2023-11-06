@@ -1,3 +1,10 @@
+![Landing Page](https://i.ibb.co/7XjrwC9/Landing.png)
+![Homepage](https://i.ibb.co/kcVxRH5/Home.png)
+![Home filters](https://ibb.co/N2VgbS0)
+![Detail API](https://ibb.co/L57RbP5)
+![Detail DB](https://ibb.co/Hd5Y8f3)
+![Form](https://ibb.co/PYdJDj8)
+
 ![HenryLogo](https://d31uz8lwfmyn8g.cloudfront.net/Assets/logo-henry-white-lg.png)
 
 # **POKEMON** | Proyecto Individual
