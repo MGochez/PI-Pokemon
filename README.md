@@ -1,9 +1,9 @@
-![Landing Page](https://i.ibb.co/7XjrwC9/Landing.png)
-![Homepage](https://i.ibb.co/kcVxRH5/Home.png)
-![Home filters](https://ibb.co/N2VgbS0)
-![Detail API](https://ibb.co/L57RbP5)
-![Detail DB](https://ibb.co/Hd5Y8f3)
-![Form](https://ibb.co/PYdJDj8)
+![Landing Page](client/src/assets/Pokepage/Landing.png)
+![Homepage](client/src/assets/Pokepage/Home.png)
+![Home filters](client/src/assets/Pokepage/HomeFiltrado.png)
+![Detail API](client/src/assets/Pokepage/DetailAPI.png)
+![Detail DB](client/src/assets/Pokepage/DetailDB.png)
+![Form](client/src/assets/Pokepage/Form.png)
 
 ![HenryLogo](https://d31uz8lwfmyn8g.cloudfront.net/Assets/logo-henry-white-lg.png)
 
